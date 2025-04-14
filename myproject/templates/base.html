@@ -21,6 +21,12 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'logout' %}">Log out</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'secret' %}">Secret page</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'password_change' %}">Change Password</a>
+            </li>
             {% else %}
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'signup' %}">Sign up</a>

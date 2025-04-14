@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import User
+from django.contrib.auth.decorators import login_required
 
 def home(request):
     count = User.objects.count()
@@ -20,3 +21,13 @@ def signup(request):
     return render(request, 'registration/signup.html', {
       'form': form  
     })
+
+
+@login_required
+def secret_page(request):
+    return render(request, 'secret_page.html')
+
+
+
+#zhanna05 jefaidfaif12
+

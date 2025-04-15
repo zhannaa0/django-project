@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Assigned to</th>
+            <th scope="col">Status</th>
+            <th scope="col">Deadline</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task.name }}</td>
+            <td>{{ task.description }}</td>
+            <td>{{ task.assigned_to }}</td>
+            <td>
+                {% if task.status == "pending" %}
+                  <span class="text-primary">{{ task.status }}</span>
+                {% elif task.status == "in progress" %}
+                  <span class="text-warning">{{ task.status }}</span>
+                {% elif task.status == "completed" %}
+                  <span class="text-success">{{ task.status }}</span>
+                {% else %}
+                  {{ task.status }}
+                {% endif %}
+              </td>              
+            <td>{{ task.deadline }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">No tasks found.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

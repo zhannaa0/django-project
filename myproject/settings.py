@@ -38,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myproject.core.apps',
+    'myproject.core.apps.CoreConfig',
     'crispy_forms',
     'crispy_bootstrap5',
+    'tasks.apps.TasksConfig',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -63,7 +64,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'myproject/templates')
+            os.path.join(BASE_DIR, 'templates')
 
         ],
         'APP_DIRS': True,

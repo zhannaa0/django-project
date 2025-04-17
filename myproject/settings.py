@@ -38,10 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myproject.core.apps.CoreConfig',
+    'core.apps.CoreConfig',
     'crispy_forms',
     'crispy_bootstrap5',
-    'myproject.tasks.apps.TasksConfig',
+    'tasks.apps.TasksConfig',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"

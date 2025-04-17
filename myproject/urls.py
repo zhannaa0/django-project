@@ -16,8 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from myproject.core import views as core_views
-from myproject.tasks import views as tasks_views
+from core import views as core_views
+from tasks import views as tasks_views
 
 
 
@@ -27,7 +27,7 @@ urlpatterns = [
     path('secret/', core_views.secret_page, name = 'secret'),
     path('signup/', core_views.signup, name = 'signup'),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('tasks/', include('myproject.tasks.urls')),
+    path('tasks/', include('tasks.urls')),
     path('profile/', core_views.profile, name = 'profile'),
 ]
 

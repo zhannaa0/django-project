@@ -27,7 +27,8 @@ urlpatterns = [
     path('secret/', core_views.secret_page, name = 'secret'),
     path('signup/', core_views.signup, name = 'signup'),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('tasks/', include('myproject.tasks.urls'))
+    path('tasks/', include('myproject.tasks.urls')),
+    path('profile/', core_views.profile, name = 'profile'),
 ]
 
 

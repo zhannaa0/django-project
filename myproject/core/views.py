@@ -28,6 +28,10 @@ def secret_page(request):
     return render(request, 'secret_page.html')
 
 
+def profile(request):
+    return render(request, 'profile.html')
+
+
 
 #zhanna05 jefaidfaif12
 

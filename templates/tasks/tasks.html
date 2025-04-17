@@ -15,12 +15,10 @@
         {% for task in tasks %}
         <tr>
             <td>{{ task.name }}</td>
-            <td>{{ task.description }}</td>
+            <td class="description-column">{{ task.description }}</td>
             <td>{{ task.assigned_to }}</td>
             <td>
-                {% if task.status == "pending" %}
-                  <span class="text-primary">{{ task.status }}</span>
-                {% elif task.status == "in progress" %}
+                {% if task.status == "in progress" %}
                   <span class="text-warning">{{ task.status }}</span>
                 {% elif task.status == "completed" %}
                   <span class="text-success">{{ task.status }}</span>
@@ -37,4 +35,14 @@
         {% endfor %}
     </tbody>
 </table>
+
+{% if user.is_superuser %}
+
+  <div class="d-flex justify-content-end mb-3">
+    <a href="/admin/tasks/task/add/">
+      <button class="btn btn-outline-secondary">Add task</button>
+    </a>
+  </div>
+
+{% endif %}
 {% endblock %}

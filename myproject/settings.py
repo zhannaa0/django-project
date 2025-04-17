@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'myproject.core.apps.CoreConfig',
     'crispy_forms',
     'crispy_bootstrap5',
-    'tasks.apps.TasksConfig',
+    'myproject.tasks.apps.TasksConfig',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"

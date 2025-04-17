@@ -5,10 +5,9 @@ class Task(models.Model):
     description = models.TextField(blank=True)
     assigned_to = models.CharField(max_length=255)  # Renamed for clarity
     status = models.CharField(max_length=50, choices=[
-        ('pending', 'Pending'),
         ('in_progress', 'In Progress'),
         ('completed', 'Completed'),
-    ], default='pending')
+    ], default='in_progress')
     created_at = models.DateTimeField(auto_now_add=True)
     deadline = models.DateTimeField(null=True, blank=True)
 

@@ -21,6 +21,7 @@ from tasks import views as tasks_views
 
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', core_views.home, name = 'home'),
@@ -29,6 +30,8 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('tasks/', include('tasks.urls')),
     path('profile/', core_views.profile, name = 'profile'),
+    path('dashboard/', include('dashboard.urls')),
+
 ]
 
 
